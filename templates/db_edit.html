@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script>
+      console.log("Hello")
+
+    </script>
+
+    <title>Coding Thunder - Admin Dashboard Blogpost Add/Edit</title>
+  </head>
+  <body>
+    <!-- Page Header-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">
+          <img style="height: 59px; border-radius: 50%; width: 59px;" src="../static/images/logo.jpg">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto py-4 py-lg-0">
+            <li class="nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/about"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/blog"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-3 py-3 py-lg-4" href="/contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <header
+      class="masthead"
+      style="background-image: url('../static/images/home-bg.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>Admin Dashboard - Add/Edit</h1>
+              <span class="subheading">Add or Edit Blogpost</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+    <form method="post" action="/dashboard/edit/{{sno}}">
+      <div class="mb-3">
+        <label for="post_title" class="form-label">Post Title</label>
+        <input value="{{post.post_title}}" placeholder="Enter Post Title Here" type="text" class="form-control" name="post_title" id="post_title" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="post_desc" class="form-label">Post Description</label>
+        <input value="{{post.post_desc}}" placeholder="Enter Post Description Here" type="text" class="form-control" name="post_desc" id="post_desc" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="post_slug" class="form-label">Post Slug</label>
+        <input value="{{post.post_slug}}" placeholder="Enter Post Slug Here" type="text" class="form-control" name="post_slug" id="post_slug" aria-describedby="emailHelp">
+      </div>
+       <div class="mb-3">
+        <label for="img_file" class="form-label">Image File</label>
+        <input value="{{post.img_file}}" placeholder="Enter Image File Name Here" type="text" class="form-control" name="img_file" id="img_file">
+      </div>
+       <div class="mb-3">
+        <label for="img_file" class="form-label">Post Author</label>
+        <input value="{{post.author}}" placeholder="Enter Image File Name Here" type="text" class="form-control" name="post_author" id="post_author">
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Enter Post Content Here" name="post_content" id="post_content" style="height: 100px">{{post.post_content}}</textarea>
+        <label for="post_content">Post Content Here</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary my-3">Save</button>
+    </form>
+   </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>

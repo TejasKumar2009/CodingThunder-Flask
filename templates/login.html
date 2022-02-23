@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block title %}CodingThunder - Admin Dashboard Login{% endblock title %}
+
+{% block style %}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.form-signin{
+  padding: 0px 210px;
+  padding-top: 25px;
+  padding-bottom: 95px;
+
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+{% endblock style %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('../static/images/home-bg.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>Admin Dashboard</h1>
+              <span class="subheading">Only Admins access the Dashboard <a href="/">Return to Home</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main class="form-signin">
+   <form method="post">
+     <h1 class="h3 mb-3 fw-normal text-center">Sign In to access admin dashboard</h1>
+ 
+     <div class="form-floating">
+       <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+       <label for="username">Username</label>
+     </div>
+     <div class="form-floating">
+       <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+       <label for="password">Password</label>
+     </div>
+     <div class="text-center">
+     <button class="w-25 btn btn-lg btn-primary my-5" type="submit">Sign in</button>
+    </div>
+   </form>
+ </main>
+
+{% endblock body %}

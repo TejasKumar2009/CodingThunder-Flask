@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block title %}CodingThunder - Home{% endblock title %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('../static/images/home-bg.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>{{params['blog_name']}}</h1>
+              <span class="subheading">{{params['home_tagline']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <h3 style="color: blue;" class="text-center my-5">Latest Blogs</h3>
+
+          {% for short_post in short_posts %}          
+          <!-- Post preview-->
+          <div class="post-preview">
+            <a href="/post/{{short_post.post_slug}}">
+              <h2 class="post-title">
+                {{short_post.post_title}}
+              </h2>
+              <h3 class="post-subtitle">
+                {{short_post.post_desc}}
+              </h3>
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#!">{{short_post.author}}</a>
+              on {{short_post.date}}
+            </p>
+          </div>
+          <!-- Divider-->
+          <hr class="my-4" />
+          {% endfor %}
+          >
+          <!-- Pager-->
+          <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary text-uppercase" href="/blog"
+              >Go to Blog</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="container my-3">
+        <h3 style="color: green;" class="text-center my-5">Testimonials</h3>
+        <div class="row">
+      <div class="card col" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Tejas</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Programmer</h6>
+          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla iste aperiam magni quod. Ducimus libero repellat sapiente dolor eius sed.</p>
+        </div>
+      </div>
+      <div class="card col" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Tejas Kumar</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Hacker</h6>
+          <p class="card-text">I am pro Hacker</p>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="row">
+      <div class="card col" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Somename</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Fullstack Web Developer</h6>
+          <p class="card-text">I am a Fullstack web Developer!!</p>
+        </div>
+      </div>
+      <div class="card col" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Anyone</h5>
+          <h6 class="card-subtitle mb-2 text-muted">App Developer</h6>
+          <p class="card-text">I am a App Developer working with Java & Kotlin</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    {% endblock body %}

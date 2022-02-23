@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block title %}Coding Thunder - Admin Dashboard{% endblock title %}
+
+{% block style %}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.form-signin{
+  padding: 0px 210px;
+  padding-top: 25px;
+  padding-bottom: 95px;
+
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+{% endblock style %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('../static/images/home-bg.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h2>Coding Thunder - Admin Dashboard</h1>
+              <span class="subheading">Access The Admin Dashboard of Coding Thunder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <div class="container my-5">
+      <h1>Basic Functions</h1>
+      <a href="/dashboard/edit/0" class="btn btn-primary">Add a New Post</a>
+      <a href="/logout" class="btn btn-danger">Logout</a>
+      <br>
+      <hr>
+      <br>
+      <h2>Add/Edit Blogpost</h2>
+      <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SNO. (Post Id)</th>
+            <th scope="col">Post Title</th>
+            <th scope="col">Post Slug</th>
+            <th scope="col">Author</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for post in posts %}
+          <tr>
+            <th scope="row">{{post.post_id}}</th>
+            <td>{{post.post_title[0:30]}}...</td>
+            <td>{{post.post_slug}}</td>
+            <td>{{post.author}}</td>
+            <td>
+              <a href="/dashboard/edit/{{post.post_id}}" class="btn btn-primary btn-sm">Edit</a>
+              <a href="/dashboard/delete/{{post.post_id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    </div>
+    {% endblock body %}

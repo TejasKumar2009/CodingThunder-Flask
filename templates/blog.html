@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}CodingThunder - Blog{% endblock title %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('https://media.istockphoto.com/photos/visual-contents-concept-social-networking-service-streaming-video-picture-id1289323170?b=1&k=20&m=1289323170&s=170667a&w=0&h=_mVTXluDgqHGZkvsG20yMKGBbPih4_sOSL_pqSnU0Qg=')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>Our Blogs</h1>
+              <span class="subheading">The Latest Tech Blog Articles to take your Knowledge & Skills to next level!!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+           
+         {% for post in posts %}
+          <!-- Post preview-->
+          <div class="post-preview">
+            <a href="/post/{{post.post_slug}}">
+              <h2 class="post-title">{{post.post_title}}</h2>
+              <h3 class="post-subtitle">{{post.post_desc[0:60]}}...</h3>
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#!">{{post.author}}</a>
+              on {{post.date}}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <a href={{prevPage}} class="btn btn-primary float-start">← Previous</a>
+      <a href="{{nextPage}}" class="btn btn-primary float-end">Next →</a>
+    </div>
+    {% endblock body %}

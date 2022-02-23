@@ -1,0 +1,17 @@
+{
+   "params":
+   {
+      "local_server": "True",
+      "local_db_uri": "mysql://username:@localhost/db_name",
+      "prod_db_uri": "mysql://username:@localhost/db_name",
+      "email_id": "YOUR_EMAIL_ID",
+      "email_password": "YOUR_EMAIL_PASSWORD",
+      "admin_user": "ADMIN_USERNAME",
+      "admin_password": "ADMIN_PASSWORD",
+      "secret_key": "YOUR_SECRET_KEY",
+      "blog_name": "Coding Thunder",
+      "home_tagline": "A Blog Liked By Programmers!",
+      "no_of_posts": "8"
+
+   }
+}
